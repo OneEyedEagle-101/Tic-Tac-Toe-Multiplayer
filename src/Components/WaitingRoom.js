@@ -41,7 +41,7 @@ export default function WaitingRoom() {
         <h1 hidden={waitMsg}>{counter}</h1>
         <a
           href={
-            "whatsapp://send?text=To play tick-tac-toe please open the below link http://localhost.com enter room id - " +
+            "whatsapp://send?text=To play tick-tac-toe please open the below link https://tic-tac-toe-multiplayer-mriu.onrender.com/ enter room id - " +
             roomId
           }
           hidden={hideButWhatsapp}
@@ -50,7 +50,7 @@ export default function WaitingRoom() {
         </a>
         <a
           href={
-            "https://api.whatsapp.com/send?text=To play tick-tac-toe please open the below link http://localhost.com enter room id - " +
+            "https://api.whatsapp.com/send?text=To play tick-tac-toe please open the below link https://tic-tac-toe-multiplayer-mriu.onrender.com/ enter room id - " +
             roomId
           }
           data-action="share/whatsapp/share"
