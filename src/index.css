@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+.textclass
+{
+
+  font-family: 'Allerta Stencil', sans-serif;
+  color: #fff;
+  font-weight:bolder;
+ 
+}
+*:focus {
+  outline: none;
+}
+@media (max-width:480px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+body{
+background-image:url("../public/backmobNew.png") ;
+background-repeat: repeat-y;
+background-size: cover;
+background-color: #0628d5;
+
+} }
+
+@media (min-width:481px){
+  body {
+background-image: url("../public/backWeb.png");background-repeat: no-repeat;
+background-size: cover;
+background-color: #0628d5;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+div .flex{
+  display: flex;
+  flex-direction: column;
+}
+*{
+  align-items: center;
+  justify-content: center;
+}
+h1,h2,h3{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+input[type='text']
+{
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  height: 30px;
+  border-radius: 8px;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-weight: bold;
+}
+span{
+  margin-bottom: 10px;
+  color:red
+}
+button{
+  margin-bottom: 10px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+  font-size: 30px;
+}
+ .waviy span {
+  font-family: 'Alfa Slab One', cursive;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  
+  
+}
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
+
+button{
+  all:unset;
+  
+
 }
