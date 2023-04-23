@@ -27,9 +27,11 @@ export default function LandingPage() {
     socket.on("room-created", (gameObject) => {
       console.log("create room");
       console.log(gameObject);
+      console.log(socket.recovered);
       sessionStorage.setItem("roomId", gameObject.roomId);
       sessionStorage.setItem("socketId", socket.id);
       navigate("/waiting-room");
+      console.log(socket.recovered);
     });
   };
 

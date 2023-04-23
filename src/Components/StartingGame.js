@@ -15,20 +15,20 @@ export default function StartingGame() {
   const [player2socketId, setPlayer2socketId] = useState("");
   useEffect(() => {
     socket.emit("game-started", roomId);
-    console.log("game started called");
+  
     socket.on("getfirst-object", (gameObject) => {
-      console.log(gameObject);
+      
       setPlayer1socketId(gameObject.player1socketId);
       setPlayer2socketId(gameObject.player2socketId);
       setPlayer1NameStored(gameObject.player1Name);
       setPlayer2NameStored(gameObject.player2Name);
       if (socketId == gameObject.player1socketId) {
-        console.log("before setting player 1", gameObject.player1Sign);
+      
         setPlayerSymbol(gameObject.player1Sign);
         setMyTurn(gameObject.player1Turn);
       } else {
         setPlayerSymbol(gameObject.player2Sign);
-        console.log("Secon player aftr setplayer", gameObject.player2Sign);
+        
         setMyTurn(gameObject.player2Turn);
       }
       setGameArr([...gameObject.gameArray]);
@@ -43,12 +43,10 @@ export default function StartingGame() {
         navigate("/win-page");
       }
       if (socketId == gameObject.player1socketId) {
-        console.log("---------");
-        console.log(gameObject);
+      
         setMyTurn(gameObject.player1Turn);
       } else {
-        console.log("*********");
-        console.log(gameObject);
+        
         setMyTurn(gameObject.player2Turn);
       }
       let arr = gameObject.gameArray;
@@ -80,7 +78,7 @@ export default function StartingGame() {
         <div
           className="flex"
           style={{
-            height: "80vh",
+            height: "60vh",
 
             width: "400px",
           }}
@@ -160,6 +158,7 @@ export default function StartingGame() {
           </div>
         </div>
       </div>
+      <footer className="textclass">Sam</footer>
     </>
   );
 }
