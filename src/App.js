@@ -5,6 +5,7 @@ import LandingPage from "./Components/LandingPage";
 import WaitingRoom from "./Components/WaitingRoom";
 import StartingGame from "./Components/StartingGame";
 import WinPage from "./Components/WinPage";
+import TiePage from "./Components/TiePage";
 function App() {
   return (
     <Routes>
@@ -12,6 +13,7 @@ function App() {
       <Route element={<WaitingRoom />} path="/waiting-room"></Route>
       <Route element={<StartingGame />} path="/starting-game"></Route>
       <Route element={<WinPage />} path="/win-page"></Route>
+      <Route element={<TiePage />} path="/tie-page"></Route>
     </Routes>
   );
 }

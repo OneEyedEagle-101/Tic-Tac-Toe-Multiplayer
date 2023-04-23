@@ -145,7 +145,13 @@ export default function LandingPage() {
         {hideCreateRoom || allHide ? (
           <></>
         ) : (
-          <Button onClick={joinRoom} variant="contained" size="large">
+          <Button
+            onClick={joinRoom}
+            variant="contained"
+            color="success"
+            style={{border:'1px solid white'}}
+            size="large"
+          >
             Join Room
           </Button>
         )}

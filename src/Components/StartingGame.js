@@ -15,26 +15,29 @@ export default function StartingGame() {
   const [player2socketId, setPlayer2socketId] = useState("");
   useEffect(() => {
     socket.emit("game-started", roomId);
-  
+
     socket.on("getfirst-object", (gameObject) => {
-      
       setPlayer1socketId(gameObject.player1socketId);
       setPlayer2socketId(gameObject.player2socketId);
       setPlayer1NameStored(gameObject.player1Name);
       setPlayer2NameStored(gameObject.player2Name);
       if (socketId == gameObject.player1socketId) {
-      
         setPlayerSymbol(gameObject.player1Sign);
         setMyTurn(gameObject.player1Turn);
       } else {
         setPlayerSymbol(gameObject.player2Sign);
-        
+
         setMyTurn(gameObject.player2Turn);
       }
       setGameArr([...gameObject.gameArray]);
     });
 
     socket.on("played", (gameObject) => {
+      if (!gameObject.isPlayer1winner && !gameObject.isPlayer2winner) {
+        if (!gameObject.gameArray.includes("\u00A0")) {
+          navigate("/tie-page");
+        }
+      }
       if (gameObject.isPlayer1winner) {
         sessionStorage.setItem("winner", gameObject.player1Name);
         navigate("/win-page");
@@ -43,10 +46,8 @@ export default function StartingGame() {
         navigate("/win-page");
       }
       if (socketId == gameObject.player1socketId) {
-      
         setMyTurn(gameObject.player1Turn);
       } else {
-        
         setMyTurn(gameObject.player2Turn);
       }
       let arr = gameObject.gameArray;
@@ -158,7 +159,6 @@ export default function StartingGame() {
           </div>
         </div>
       </div>
-      <footer className="textclass">Sam</footer>
     </>
   );
 }
